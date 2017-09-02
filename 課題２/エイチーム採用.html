@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://tc.hr.ate.am/581/edit -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>エイチーム採用</title>
+    <link rel="stylesheet" media="all" href="./エイチーム採用_files/application-4b26cc280489d61f941822fbb042ca92fba3a8e3f54ede6b24f7472e4f7dc392.css" data-turbolinks-track="true">
+    <script src="./エイチーム採用_files/application-f023cbe6d7073c4dd2994b2795356293419a5301601f71a4dd0390e459050bab.js.download" data-turbolinks-track="true"></script>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="J90ZcRZw/dmWjIHu2ElZKUHQ0D72/r9MjarBAWiP78IyK4iSM/8FXLyZcl8okZBcBIO9BeW+mWJlRGBQo/wXwg==">
+  </head>
+  <body>
+    <div class="container">
+      <p class="logo"><img height="36" width="164" alt="株式会社エイチーム" src="./エイチーム採用_files/header_logo-1cd42e9f878c34728cdaf17d37b9b6d03746352b2103231de93f3d5bea8ff78b.gif"></p>
+<h1 class="main-title">テスト問題</h1>
+
+<!--カウントダウン-->
+<div class="wrap clearfix">
+  <p class="timetext" id="text">制限時間：</p>
+  <div id="CDT" data-expire="2017/08/06 06:49:10 +0000" data-redirect="/">終了しました。</div>
+</div>
+<!--カウントダウン-->
+
+<div class="caution-text">
+  <p>注意事項</p>
+  <ul>
+    <li>回答が途中の場合でも必ず提出するようにしてください（白紙の場合は不合格となります）</li>
+    <li><a href="http://ideone.com/" target="_blank">ideone.com</a> を実行環境として使用してください</li>
+  </ul>
+</div>
+
+<form class="edit_form" id="edit_form_581" action="http://tc.hr.ate.am/581/update" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="J90ZcRZw/dmWjIHu2ElZKUHQ0D72/r9MjarBAWiP78IyK4iSM/8FXLyZcl8okZBcBIO9BeW+mWJlRGBQo/wXwg==">
+    <h2 class="gaiyou"><span>問1</span></h2>
+    <p class="gaiyou-honbun">AさんとBさんは結婚が決まり、結婚式を執り行う日取りを考えています。
+しかし、この世の中には忌み数というものがあり、その日付は避けたいと思いました。
+
+挙式したい日付の期間を与えて、その月または日(年は除く)が以下の忌み数でない
+日付の個数を算出するプログラムを作成してください。
+忌み数：4, 5, 9, 13, 14, 17
+※ 15 や 19 は忌み数ではありません
+
+【条件】
+・1ヶ月は30日で固定
+・閏年は考慮しない
+
+※ {} は配列であることを、"" はその中が文字列であることを示しています。
+
+■ 例１
+入力値：{ "2016/1/10", "2016/2/15" }
+出力値: 28
+
+以下の28日。
+2016/1/10,11,12,15,16,18,19,20,21,22,23,24,25,26,27,28,29,30
+2016/2/1,2,3,6,7,8,10,11,12,15
+
+
+■ 例２
+入力値：{ "2014/2/10", "2015/3/10" }
+出力値: 241
+
+以上。</p>
+    <p class="kaitou">解答</p>
+    
+      <input type="hidden" value="1161" name="form[solutions_attributes][1161][id]" id="form_solutions_attributes_1161_id">
+      <textarea class="kaitou-area" name="form[solutions_attributes][1161][content]" id="form_solutions_attributes_1161_content"></textarea>
+    <h2 class="gaiyou"><span>問2</span></h2>
+    <p class="gaiyou-honbun">一般的な電話機のプッシュボタンは以下のようなレイアウトになっています。
+1 2 3
+4 5 6
+7 8 9
+* 0 #
+
+プッシュボタン上のある2つのボタンの間の指の移動距離を
+マンハッタン距離（ボタン間のXY座標のそれぞれの距離の合計）として定義します。
+例えば、'6'ボタンは、
+そのボタン自身からの距離は 0、
+'3' や '5'、’9’ からは 1、
+'2'、'4'、'8'、'#' からは 2、
+'1'、'7'、'0' からは 3、
+そして、'*' からは 4 となります。
+
+電話番号をあらわす文字列を受け取り、
+その電話番号をダイヤルするのに必要な最小の指の移動距離を
+整数値として返す関数を作成してください。
+なお、指は初期状態として '5' ボタンの上にあるとします。
+
+前提条件）
+・入力される電話番号は 3 〜 20 桁
+・入力される電話番号は、0 〜 9 の数字のみ
+
+※ "" はその中が文字列であることを示しています。
+
+
+■ 例１
+入力値："911"
+返戻値：6
+
+指は初期状態の '5' から 2 つ移動して '9' へ。
+それから '1' へ 4 つ移動。
+最後の '1' は移動なし。
+従って、返戻値は 2 + 4 + 0 = 6。
+
+■ 例２
+入力値："5555555"
+返戻値：0
+
+すべての入力値において指を動かす必要はないため、返戻値は 0。
+
+■ 例３
+入力値："8606335540"
+返戻値：16
+
+■ 例４
+入力値："8606574276"
+返戻値：21
+
+以上。</p>
+    <p class="kaitou">解答</p>
+    
+      <input type="hidden" value="1162" name="form[solutions_attributes][1162][id]" id="form_solutions_attributes_1162_id">
+      <textarea class="kaitou-area" name="form[solutions_attributes][1162][content]" id="form_solutions_attributes_1162_content"></textarea>
+  <p class="button"><input type="submit" name="commit" value="保存" class="button01"></p>
+</form>
+      
+    </div>
+  
+
+</body></html>

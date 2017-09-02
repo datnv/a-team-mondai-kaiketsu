@@ -1,0 +1,100 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Main {
+	static String fromDate= null;
+	static String toDate= null;
+	public static void Input(){
+		
+		Scanner kb = new Scanner(System.in);
+		System.out.print("Input From Date:");
+		fromDate=kb.next();
+		System.out.print("Input To Date:");
+		toDate=kb.next();
+	}
+	
+	
+	@SuppressWarnings("deprecation")
+	public static int CalculateDate(String fromDate, String toDate){
+		
+		int year1, month1, day1 = 0;
+		int year2, month2, day2 = 0;
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+		
+		
+		Date date1;
+		Date date2;
+		try {
+			date1 = formatter.parse(fromDate);
+			date2 = formatter.parse(toDate);
+			year1=date1.getYear();
+			year2 = date2.getYear();
+			month1= date1.getMonth();
+			month2 = date2.getMonth();
+			day1 = date1.getDate();
+			day2 = date2.getDate();
+			
+			int distanceOfMonth = 0;
+			int distanceOfYear = year2-year1;
+			int newMonth = distanceOfYear*12+month2;
+			for(int j = month1+1; j < newMonth; j++){
+				int tl = j/12;
+				
+				if(j==tl*12+4||j==tl*12+5||j==tl*12+9||j==tl*12+13||j==tl*12+14||j==tl*12+17){
+					
+				}else{
+					distanceOfMonth++;
+				}
+			}
+				
+			int topMonth1=30-day1+1;
+			int bottomMonth2=day2;
+			if(month1 == 4 || month1 == 5 || month1==9){
+				topMonth1=0;
+			}else{
+				for(int i = day1; i <=17; i++){
+					if(i == 4 || i == 5 || i == 9 || i==13 || i==14 || i==17){
+						topMonth1--;
+					}
+				}
+			}
+			if(month2 == 4 || month2 == 5 || month2==9){
+				topMonth1=0;
+			}else{
+				for(int i = day2; i>=4; i--){
+					if(i == 4 || i == 5 || i == 9 || i==13 || i==14 || i==17){
+						bottomMonth2--;
+					}
+				}
+			}
+			
+			int result = 0;
+			
+			if((month2-month1)>=1){
+				result = (distanceOfMonth)*24+topMonth1+bottomMonth2;
+			}else{
+				result = day2-day1+1;
+				for(int i = day1; i<=day2; i++){
+					if(i == 4 || i == 5 || i == 9 || i==13 || i==14 || i==17){
+						result--;
+					}
+				}
+				
+			}
+			return result;
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			return 0;
+		}
+	}
+	
+	public static void main(String[] args) {
+		Input();
+		System.out.print(CalculateDate(fromDate, toDate));
+		
+			
+	}
+}
